@@ -6,21 +6,21 @@ import { ApiProperty } from '@nestjs/swagger';
 
 export class GetTasksDto {
   @IsOptional()
-  @ApiProperty()
+  @ApiProperty({ required: false })
   @IsEnum(TaskStatus, {
     message: 'Status must be pending, in-progress, or completed',
   })
   status?: string;
 
   @IsOptional()
-  @ApiProperty()
+  @ApiProperty({ required: false })
   @IsEnum(TaskPriority, {
     message: 'Priority must be low, medium, or high',
   })
   priority?: string;
 
   @IsOptional()
-  @ApiProperty()
+  @ApiProperty({ required: false })
   @Type(() => Number)
   @IsInt()
   @Min(1)
@@ -28,7 +28,7 @@ export class GetTasksDto {
   page: number;
 
   @IsOptional()
-  @ApiProperty()
+  @ApiProperty({ required: false })
   @Type(() => Number)
   @IsInt()
   @Min(1)

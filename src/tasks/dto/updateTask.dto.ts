@@ -5,22 +5,22 @@ import { MongoObjectId } from 'src/types/objectId';
 
 export class UpdateTaskDto {
   @IsOptional()
-  @ApiProperty()
+  @ApiProperty({ required: false })
   title?: string;
 
   @IsOptional()
-  @ApiProperty()
+  @ApiProperty({ required: false })
   description?: string;
 
   @IsOptional()
-  @ApiProperty()
+  @ApiProperty({ required: false })
   @IsEnum(TaskPriority, {
     message: 'Priority must be low, medium, or high',
   })
   priority?: TaskPriority;
 
   @IsOptional()
-  @ApiProperty()
+  @ApiProperty({ required: false })
   @IsMongoId({ message: 'assignedTo should be a valid ID' })
   assignedTo?: MongoObjectId;
 }
