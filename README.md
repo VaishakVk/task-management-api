@@ -19,7 +19,7 @@ It provides authentication, task creation, assignment, and filtering features.
 ### **Clone the Repository**
 
 ```sh
-git clone
+git clone https://github.com/VaishakVk/task-management-api.git
 cd task-management-api
 
 ```
